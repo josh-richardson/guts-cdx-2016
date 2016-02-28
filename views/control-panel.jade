@@ -1,0 +1,73 @@
+//
+   Created by Ed on 28/02/2016.
+extends _bootstrap.jade
+append styles
+    link(href='/stylesheets/dashboard.css', rel='stylesheet')
+    link(href='/stylesheets/theme.css', rel='stylesheet')
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .container-fluid
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') CitadelOS.
+            #navbar.navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href='/control-panel') Control Panel
+                    li
+                        a(href='/help') Help
+                    li
+                        a(href='/logout') Logout
+
+    .container-fluid
+        .row
+            .col-sm-3.col-md-2.sidebar
+                ul.nav.nav-sidebar
+                    li.active
+                        a(href='/control-panel')
+                            | Overview
+                            span.sr-only (current)
+                    li
+                        a(href='/status')
+                            | Status Updates
+            .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+                h1.page-header Control Panel
+                .well
+                    p
+                        | Here you will be able to post new Status Updates and also view our Banking Customers.
+                h2.sub-header Status Updates
+                form.form-statusupdate#statusForm(action='/postupdate', method='post')
+                    input#post.form-control(type='text',placeholder='Post new status...',name='post')
+                    input#csrf.form-control(value='#{csrf}',placeholder='',name='csrf', type="hidden")
+                    br
+                    p.alert-info #{postMessage}
+                    br
+                    button.btn.btn-success(type='submit') Submit
+
+                h2.sub-header Banking Customer
+                .table-responsive
+                    table.table.table-striped
+                        thead
+                            tr
+                                th ID
+                                th First name
+                                th Second name
+                                th Balance
+                        tbody
+                            //#{data}
+
+                        - each item in rows
+                                tr
+                                    td= item.id
+                                    td= item.firstname
+                                    td= item.surname
+                                    td= item.balance
+
+
+
+
+

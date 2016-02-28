@@ -1,0 +1,27 @@
+//
+   Created by Ed on 28/02/2016.
+//
+   Created by Ed on 28/02/2016.
+extends _bootstrap.jade
+append styles
+    link(href='/stylesheets/starter-template.css', rel='stylesheet')
+    link(href='/stylesheets/signin.css', rel='stylesheet')
+    link(href='/stylesheets/theme.css', rel='stylesheet')
+block body
+    +navbar-fixed("CitadelOS.","navbar","inverse","active")
+        +nav_item("/") Home
+        +nav_item("/about") About
+        +nav_item("/control-panel") Account
+    .container
+        .page-header
+            h1 Help
+        .well
+            p
+                | Here you will learn how to make use of the CitadelOS Web App! If you have any further questions please do not contact us. We have no idea what is going on in this 'futuristic' OS.
+        .row
+            .col-sm-6
+                +panel-primary("Guest")
+                    | As a guest/non-logged in user there are only certain sections of the OS Web App you can access. You can view the Status Updates and login pages.
+            .col-sm-6
+                +panel-primary("Administrator")
+                    | If you are an Admin user please refer to the documentation already given to you.       &nbsp;

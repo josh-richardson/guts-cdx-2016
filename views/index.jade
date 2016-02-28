@@ -1,0 +1,42 @@
+Created by Ed on 27/02/2016.
+doctype html
+extends _bootstrap.jade
+append styles
+  //	!-- Custom styles for this template --
+  link(href="/stylesheets/cover.css", rel="stylesheet")
+
+block body
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand CitadelOS.
+            nav
+              ul.nav.masthead-nav
+                li.active
+                  a(href="/") Home
+                li
+                  a(href="/about") About
+                li
+                    a#help(href="/help") Help
+                li
+                  a#login(href="/control-panel") Account
+
+        .inner.cover
+          h1.cover-heading CitadelOS.
+          p.lead Welcome to the 'future' of major infrastructure.
+          p.lead
+            b Live.
+            b  Connected.
+          a(href="/status", class="btn btn-lg btn-default") Status Updates
+
+        .mastfoot
+          .inner
+            p Team 6IX - <a href="https://twitter.com/EdBruceIO">@EdBruceIO</a>.
+    script(src='/javascripts/homepage.js')
+
+
+
+
+

@@ -1,0 +1,24 @@
+extends _bootstrap.jade
+append styles
+    link(href='/stylesheets/starter-template.css', rel='stylesheet')
+    link(href='/stylesheets/signin.css', rel='stylesheet')
+block body
+    +navbar-fixed("CitadelOS.","navbar","inverse")
+        +nav_item("/") Home
+        +nav_item("/about") About
+        +nav_item("#", "active") Account
+    .container
+        form.form-signin#loginform(action='/dologin', method='post')
+            h2.form-signin-heading Securely Login. &nbsp;
+                i.fa.fa-lock
+
+            label.sr-only(for='inputEmail') Email address
+            input#inputEmail.form-control(type='text',value='',placeholder='Username',name='username')
+            label.sr-only(for='inputPassword') Password
+            input#inputPassword.form-control(type='password',value='',placeholder='Password',name='password')
+            input#csrf.form-control(value='#{csrf}',placeholder='',name='csrf', type="hidden")
+
+            p.alert-danger #{error}
+
+            button.btn.btn-lg.btn-primary.btn-block(type='submit', form='loginform') Sign in
+

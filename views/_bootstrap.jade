@@ -1,0 +1,68 @@
+//- bootstrap.jade
+//- bootstrap mixins
+
+
+//- Including Icon mixins
+include ../public/components/icons
+//- Including Alert mixins
+include ../public/components/alerts
+//- Including Tooltip mixins
+include ../public/components/tooltips
+//- Including Accordion mixins
+include ../public/components/accordion
+//- Including Carousel mixins
+include ../public/components/carousel
+//- Including Table mixins
+include ../public/components/tables
+//- Including Navbar mixins
+include ../public/components/navbar
+//- Including Toggle Button mixins
+include ../public/components/toggle
+//- Including Nav mixins
+include ../public/components/navs
+//- Including Label mixins
+include ../public/components/labels
+//- Including Panel mixins
+include ../public/components/panels
+//- Including Tab mixins
+include ../public/components/tabs
+//- Including Dropdown mixins
+include ../public/components/dropdowns
+//- Including Form control mixins
+include ../public/components/forms
+//- Including Modal dialog mixins
+include ../public/components/modal
+//- Including List group mixins
+include ../public/components/list-groups
+//- Including Progress bar mixins
+include ../public/components/progress-bars
+//- Including Button mixins
+include ../public/components/buttons
+//- Including Image mixins
+include ../public/components/images
+//- Including Bootswatch theme mixins
+include ../public/components/bootswatch
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+		meta(name="description",content="")
+		meta(name="author",content="")
+		link(rel="icon",href="../../favicon.ico")
+		title= title
+		block styles
+			link(rel="stylesheet",href="/javascripts/bootstrap.min.css")
+			link(rel='stylesheet',href='/javascripts/font-awesome.min.css')
+			script(src="/javascripts/jquery.min.js")
+			script(src="/javascripts/bootstrap.min.js")
+
+			//link(rel="stylesheet",href="css/bootstrap.min.css")
+	body(data-spy="scroll",data-target=".scrollspy")
+		block body
+			
+		block scripts
+			//script(src="js/jquery.min.js")
+			//script(src="js/bootstrap.min.js")
